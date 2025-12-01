@@ -9,6 +9,6 @@
 # Configuration for the serverless function handler
 # This tells Netlify which directory contains the server-side code (the Netlify Function)
 [functions]
-  directory = ".output/server" 
+  directory = ".netlify/functions-internal"
   # Optional: You might need to specify the Node.js version 
   # node_bundler = "esbuild"

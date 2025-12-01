@@ -1,6 +1,6 @@
 [build]
   # The command to build your Nuxt application
-  command = "bun run build" 
+  command = "bun --bun run nuxt build" 
   
   # The directory where Nuxt/Nitro puts the static files 
   # This is the default output directory after a build.

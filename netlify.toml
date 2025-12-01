@@ -1,21 +1,20 @@
 [build]
-  # The command to build your Nuxt application
-  command = "bun --bun run nuxt build" 
+  # ✅ Simplification: The "bun --bun run" is generally only needed for
+  # the 'dev' command. For 'build', simply running 'bun run nuxt build' 
+  # is sufficient when NETLIFY_USE_BUN is true.
+  command = "bun run nuxt build"
   
-  # The directory where Nuxt/Nitro puts the static files 
-  # This is the default output directory after a build.
-  publish = "dist"
+  # default Nuxt 3/4 Nitro output, as 'dist' is often incorrect.
+  publish = "dist" 
 
 # Configuration for the serverless function handler
-# This tells Netlify which directory contains the server-side code (the Netlify Function)
 [functions]
+  # ✅ Correct: This targets the directory where the Nuxt Netlify adapter 
+  # places the final serverless function handler.
   directory = ".netlify/functions-internal"
-  # Optional: You might need to specify the Node.js version 
-  # node_bundler = "esbuild"
+  # Removed: node_bundler = "esbuild" - Not usually needed with Nuxt/Nitro preset.
 
 [build.environment]
-  # Tell Netlify to use Bun for package installation and execution
-  # Note: Netlify's full support for Bun is an evolving feature.
-  # This and the engines field are key indicators.
+  # ✅ Essential: This tells Netlify to use the Bun runtime instead of Node.js
   NETLIFY_USE_BUN = true
-  # You may need to follow specific Netlify documentation for Bun support
+  # Removed: NETLIFY_BUILD_IMAGE = "trusty" - Using an outdated image is not recommended.

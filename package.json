@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "build": "bun --bun run nuxt build",
+    "dev": "bun --bun run nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -12,13 +12,16 @@
   "dependencies": {
     "@elysiajs/cron": "^1.4.1",
     "@elysiajs/eden": "^1.4.5",
-    "@netlify/nuxt": "0.2.13",
     "elysia": "^1.4.16",
     "nuxt": "^4.2.1",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "nuxt-elysia": "^0.2.0"
+    "nuxt-elysia": "^0.2.0",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
   }
 }

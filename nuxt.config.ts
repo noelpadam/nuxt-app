@@ -14,9 +14,13 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: [// ... other modules
-  'nuxt-elysia', '@netlify/nuxt'],
+  modules: ['nuxt-elysia'],
   nitro: {
-    preset: 'netlify',
-  }
+    preset: 'bun',
+  },
+  nuxtElysia: {
+    // Optional: Mount the Elysia server on /api instead of the default /_api
+    path: '/api' 
+  },
+ 
 })

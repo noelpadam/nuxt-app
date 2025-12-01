@@ -2,6 +2,7 @@
   "name": "my-nuxt-app",
   "type": "module",
   "private": true,
+  "packageManager": "bun@1.1.0",
   "scripts": {
     "build": "bun --bun run nuxt build",
     "dev": "bun --bun run nuxt dev",

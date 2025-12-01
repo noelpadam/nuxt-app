@@ -16,5 +16,5 @@
 
 [build.environment]
   # ✅ Essential: This tells Netlify to use the Bun runtime instead of Node.js
-  NETLIFY_USE_BUN = true
+  NETLIFY_USE_BUN = "true"
   # Removed: NETLIFY_BUILD_IMAGE = "trusty" - Using an outdated image is not recommended.

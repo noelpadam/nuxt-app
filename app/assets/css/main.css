@@ -1,0 +1,14 @@
+  h1 {
+   font-family: 'FarAwayGalaxy', sans-serif;
+  }
+
+  p.apitxt {
+    font-family: 'FarAwayGalaxy', sans-serif;
+    color: green;
+    width: 130px;
+    height: auto;
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 5px;
+    background-color: black;
+  }

@@ -1,0 +1,22 @@
+{
+  "name": "my-nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "^1.4.5",
+    "elysia": "^1.4.16",
+    "nuxt": "^4.2.1",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "nuxt-elysia": "^0.2.0"
+  }
+}

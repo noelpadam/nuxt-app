@@ -15,8 +15,4 @@
   # Removed: node_bundler = "esbuild" - Not usually needed with Nuxt/Nitro preset.
 
 [build.environment]
-  # ✅ Essential: This tells Netlify to use the Bun runtime instead of Node.js
   NETLIFY_USE_BUN = "true"
-  BUN_VERSION = "1.1.0" # Use the specific version you need
-  NPM_FLAGS = "--ignore-scripts"
-  # Removed: NETLIFY_BUILD_IMAGE = "trusty" - Using an outdated image is not recommended.

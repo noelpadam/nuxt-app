@@ -6,9 +6,9 @@ export default () => new Elysia()
   .use(
 		cron({
 			name: '2FHE',
-			pattern: '* * * /1 * *',
+			pattern: '0 18 * * *',
 			run() {
-				console.log('Heartbeat')
+				console.log('2FHE...')
 			}
 		})
 	)

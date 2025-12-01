@@ -14,10 +14,8 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: [
-    // ... other modules
-    'nuxt-elysia'
-  ],
+  modules: [// ... other modules
+  'nuxt-elysia', '@netlify/nuxt'],
   nitro: {
     preset: 'bun'
   }

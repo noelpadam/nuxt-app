@@ -17,6 +17,6 @@ export default defineNuxtConfig({
   modules: [// ... other modules
   'nuxt-elysia', '@netlify/nuxt'],
   nitro: {
-    preset: 'netlify',
+    preset: 'bun',
   }
 })

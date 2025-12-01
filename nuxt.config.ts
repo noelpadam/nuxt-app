@@ -25,5 +25,13 @@ export default defineNuxtConfig({
     // Optional: Mount the Elysia server on /api instead of the default /_api
     path: '/api' 
   },
+  vite: {
+    ssr: {
+      // Explicitly mark bun:sqlite as external for the server-side build
+      external: [
+        'bun:sqlite' 
+      ],
+    },
+  },
  
 })

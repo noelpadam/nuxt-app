@@ -20,3 +20,5 @@
   # 5. RECOMMENDED: Pins the Bun version for stable, consistent builds.
   # Replace 1.1.0 with the specific version you develop with locally.
   BUN_VERSION = "1.1.0"
+  # Force Node.js version 20 or 22 (LTS is recommended)
+  NODE_VERSION = "20"

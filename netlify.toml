@@ -4,7 +4,7 @@
   
   # The directory where Nuxt/Nitro puts the static files 
   # This is the default output directory after a build.
-  publish = ".output/public"
+  publish = "build"
 
 # Configuration for the serverless function handler
 # This tells Netlify which directory contains the server-side code (the Netlify Function)

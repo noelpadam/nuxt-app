@@ -12,3 +12,10 @@
   directory = ".netlify/functions-internal"
   # Optional: You might need to specify the Node.js version 
   # node_bundler = "esbuild"
+
+[build.environment]
+  # Tell Netlify to use Bun for package installation and execution
+  # Note: Netlify's full support for Bun is an evolving feature.
+  # This and the engines field are key indicators.
+  NETLIFY_USE_BUN = true
+  # You may need to follow specific Netlify documentation for Bun support

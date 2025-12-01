@@ -2,7 +2,7 @@
   # ✅ Simplification: The "bun --bun run" is generally only needed for
   # the 'dev' command. For 'build', simply running 'bun run nuxt build' 
   # is sufficient when NETLIFY_USE_BUN is true.
-  command = "bun --bun run nuxt build"
+  command = "bun install && bun --bun run nuxt build"
   
   # default Nuxt 3/4 Nitro output, as 'dist' is often incorrect.
   publish = "dist" 

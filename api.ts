@@ -83,7 +83,7 @@ export default () => new Elysia()
 async function debugAndOpenDB() {
     // 1. List files in the execution directory (should be /var/task/)
     try {
-        const files = fs.readdirSync(ESM_DIRNAME);
+        const files = fs.readdirSync(ESM_DIRNAME + '/var/task'); // Adjusted to parent directory for Netlify
         console.log("INFO: Files found in execution directory:", files);
         
         if (!files.includes(FILENAME)) {

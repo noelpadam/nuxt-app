@@ -19,8 +19,9 @@ import fs from 'fs'; // 👈 Import fs for debugging
 const __filename = fileURLToPath(import.meta.url);
 const ESM_DIRNAME = path.dirname(__filename); // 👈 The new directory path
 const FILENAME = 'my_data.sqlite';
-//const DB_PATH = path.join(ESM_DIRNAME, 'my_data.sqlite');
-//const DB_PATH = '/var/task/my_data.sqlite';
+// For testing purposes, hardcode the path where Netlify puts included files
+const DB_PATH = '/var/task/my_data.sqlite';
+
 
 // Function to get an open, promise-based database handle
 // async function getDB() {
@@ -95,7 +96,7 @@ async function debugAndOpenDB() {
     }
     
     // 2. Construct the absolute path and attempt open
-    const DB_PATH = path.join(ESM_DIRNAME, FILENAME); 
+    //const DB_PATH = path.join(ESM_DIRNAME, FILENAME); 
     console.log("INFO: Attempting final open at:", DB_PATH); 
     
     // Assuming 'open' and 'sqlite3.Database' are defined/imported

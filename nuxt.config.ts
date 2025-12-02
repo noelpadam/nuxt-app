@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: ['nuxt-elysia', 'netli'],
+  modules: ['nuxt-elysia'],
   nitro: {
     externals: {
       external: ['bun:sqlite', 'bun:ffi', /* any other bun: modules */]

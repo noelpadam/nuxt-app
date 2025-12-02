@@ -22,6 +22,7 @@ const DB_PATH = path.join(ESM_DIRNAME, 'my_data.sqlite');
 
 // Function to get an open, promise-based database handle
 async function getDB() {
+  console.log("Attempting to open DB at:", DB_PATH); // 👈 ADD THIS FOR DEBUGGING
   return open({
     filename: DB_PATH, // Use the resolved absolute path
     driver: sqlite3.Database

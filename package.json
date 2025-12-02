@@ -6,9 +6,9 @@
   "scripts": {
     "build": "bun --bun run nuxt build",
     "dev": "bun --bun run nuxt dev",
-    "generate": "bun run nuxt generate",
-    "preview": "bun run nuxt preview",
-    "postinstall": "bun run nuxt prepare"
+    "generate": "bun --bun run nuxt generate",
+    "preview": "bun --bun run nuxt preview",
+    "postinstall": "bun --bun run nuxt prepare"
   },
   "dependencies": {
     "@elysiajs/cron": "^1.4.1",

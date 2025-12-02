@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     externals: {
       external: ['bun:sqlite', 'bun:ffi', /* any other bun: modules */]
     },
-    preset: 'netlify',
+    preset: 'bun',
   },
   nuxtElysia: {
     // Optional: Mount the Elysia server on /api instead of the default /_api

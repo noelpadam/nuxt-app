@@ -18,7 +18,8 @@ import { fileURLToPath } from 'url'; // 👈 Import required for ESM
 // Define the ESM equivalent of __dirname
 const __filename = fileURLToPath(import.meta.url);
 const ESM_DIRNAME = path.dirname(__filename); // 👈 The new directory path
-const DB_PATH = path.join(ESM_DIRNAME, 'my_data.sqlite');
+//const DB_PATH = path.join(ESM_DIRNAME, 'my_data.sqlite');
+const DB_PATH = '/var/task/my_data.sqlite';
 
 // Function to get an open, promise-based database handle
 async function getDB() {

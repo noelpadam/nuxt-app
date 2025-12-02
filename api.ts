@@ -3,7 +3,8 @@ import { cron } from '@elysiajs/cron'
 // import { StoreDatabase } from './db.js';
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
-import path from 'path'
+import path from 'path';
+import { fileURLToPath } from 'url'; // 👈 Import required for ESM
 
 
 
@@ -14,7 +15,11 @@ import path from 'path'
 // db.prepare("INSERT INTO store VALUES (?, ?, ?)").run([2, "antony", "author2"]);
 // console.log(db.prepare("SELECT * FROM store").all());
 
-const DB_PATH = path.join(__dirname, 'my_data.sqlite');
+// Define the ESM equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const ESM_DIRNAME = path.dirname(__filename); // 👈 The new directory path
+const DB_PATH = path.join(ESM_DIRNAME, 'my_data.sqlite');
+
 // Function to get an open, promise-based database handle
 async function getDB() {
   return open({

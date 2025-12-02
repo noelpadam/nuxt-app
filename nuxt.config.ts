@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-elysia'],
   nitro: {
     externals: {
-      external: ['bun:sqlite', 'bun:ffi', /* any other bun: modules */]
+      external: ['bun:sqlite', 'bun:ffi']
     },
    preset: 'netlify',
   },
@@ -29,7 +29,8 @@ export default defineNuxtConfig({
     ssr: {
       // Explicitly mark bun:sqlite as external for the server-side build
       external: [
-        'bun:sqlite' 
+        'bun:sqlite',
+        'bun:ffi'
       ],
     },
   },

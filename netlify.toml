@@ -7,12 +7,6 @@
   # default Nuxt 3/4 Nitro output, as 'dist' is often incorrect.
   publish = ".output/public" 
 
-# Configuration for the serverless function handler
-[functions]
-  # ✅ Correct: This targets the directory where the Nuxt Netlify adapter 
-  # places the final serverless function handler.
-  directory = ".output/server/index.mjs"
-  # Removed: node_bundler = "esbuild" - Not usually needed with Nuxt/Nitro preset.
 
 [build.environment]
   NETLIFY_USE_BUN = "true"

@@ -25,9 +25,6 @@ export default () => new Elysia()
   .get('/hello', () => ({ message: 'Hello from me..' }))
   .get("/store", async () => {
 	const db = await getDB();
-    await db.run("CREATE TABLE IF NOT EXISTS store (id INTEGER PRIMARY KEY, name TEXT NOT NULL,author TEXT UNIQUE NOT NULL)");
-	await db.run("INSERT OR IGNORE INTO store VALUES (?, ?, ?)", [1, 'jacob', 'author1']);
-    await db.run("INSERT OR IGNORE INTO store VALUES (?, ?, ?)", [2, 'antony', 'author2']);
     // Note: Database operations are now awaited
     const allItems = await db.all("SELECT * FROM store");
     // db is now type-safe and accessible in the handler

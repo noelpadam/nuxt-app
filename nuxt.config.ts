@@ -14,14 +14,11 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: ['nuxt-elysia'],
+  modules: ['nuxt-elysia', 'netli'],
   nitro: {
     externals: {
       external: ['bun:sqlite', 'bun:ffi', /* any other bun: modules */]
     },
-    // prerender: {
-    //   routes: ['/'], 
-    // },
    preset: 'netlify',
   },
   nuxtElysia: {

@@ -16,23 +16,11 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: ['nuxt-elysia'],
   nitro: {
-    externals: {
-      external: ['bun:sqlite', 'bun:ffi']
-    },
    preset: 'netlify',
   },
   nuxtElysia: {
     // Optional: Mount the Elysia server on /api instead of the default /_api
     path: '/api' 
-  },
-  vite: {
-    ssr: {
-      // Explicitly mark bun:sqlite as external for the server-side build
-      external: [
-        'bun:sqlite',
-        'bun:ffi'
-      ],
-    },
   },
  
 })

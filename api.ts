@@ -3,6 +3,7 @@ import { cron } from '@elysiajs/cron'
 // import { StoreDatabase } from './db.js';
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
+import path from 'path'
 
 
 
@@ -13,10 +14,11 @@ import { open } from 'sqlite';
 // db.prepare("INSERT INTO store VALUES (?, ?, ?)").run([2, "antony", "author2"]);
 // console.log(db.prepare("SELECT * FROM store").all());
 
+const DB_PATH = path.join(__dirname, 'my_data.sqlite');
 // Function to get an open, promise-based database handle
 async function getDB() {
   return open({
-    filename: 'my_data.sqlite',
+    filename: DB_PATH, // Use the resolved absolute path
     driver: sqlite3.Database
   });
 }
@@ -25,10 +27,22 @@ export default () => new Elysia()
   .get('/hello', () => ({ message: 'Hello from me..' }))
   .get("/store", async () => {
 	const db = await getDB();
-    // Note: Database operations are now awaited
-    const allItems = await db.all("SELECT * FROM store");
+	// 1. Ensures table exists without error
+	await db.run(`
+	CREATE TABLE IF NOT EXISTS store (
+		id INTEGER PRIMARY KEY, 
+		name TEXT NOT NULL,
+		author TEXT UNIQUE NOT NULL -- CRITICAL: UNIQUE constraint here
+	)
+	`);
+
+	// 2. Skips insertion if the 'author' (the UNIQUE column) already exists.
+	await db.run("INSERT OR IGNORE INTO store VALUES (?, ?, ?)", [1, 'jacob', 'author1']);
+	await db.run("INSERT OR IGNORE INTO store VALUES (?, ?, ?)", [2, 'antony', 'author2']);
     // db is now type-safe and accessible in the handler
     //const allItems = db.prepare('SELECT * FROM store').all();
+	 // Note: Database operations are now awaited
+    const allItems = await db.all("SELECT * FROM store");
     return { 
       data: allItems 
     };

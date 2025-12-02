@@ -19,9 +19,9 @@ export default defineNuxtConfig({
     externals: {
       external: ['bun:sqlite', 'bun:ffi', /* any other bun: modules */]
     },
-    prerender: {
-      routes: ['/'], 
-    },
+    // prerender: {
+    //   routes: ['/'], 
+    // },
    preset: 'netlify',
   },
   nuxtElysia: {

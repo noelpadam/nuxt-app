@@ -16,9 +16,9 @@
 
 [build.environment]
   NETLIFY_USE_BUN = "true"
-  # NPM_FLAGS = "--ignore-scripts"
+  NPM_FLAGS = "--ignore-scripts"
   # 5. RECOMMENDED: Pins the Bun version for stable, consistent builds.
-  # Replace 1.1.0 with the specific version you develop with locally.
-  BUN_VERSION = "1.1.0"
+  # Replace 1.3.3 with the specific version you develop with locally.
+  BUN_VERSION = "1.3.3"
   # Force Node.js version 20 or 22 (LTS is recommended)
   NODE_VERSION = "22"

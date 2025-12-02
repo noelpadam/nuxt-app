@@ -7,7 +7,10 @@
   # default Nuxt 3/4 Nitro output, as 'dist' is often incorrect.
   publish = ".output/public" 
 
-
+[functions]
+  # CRITICAL: This must point to the directory created by the Nuxt/Nitro 'netlify' preset.
+  directory = ".netlify/functions-internal"
+  
 [build.environment]
   NETLIFY_USE_BUN = "true"
   # NPM_FLAGS = "--ignore-scripts"

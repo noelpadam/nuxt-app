@@ -10,7 +10,8 @@
 [functions]
   # CRITICAL: This must point to the directory created by the Nuxt/Nitro 'netlify' preset.
   directory = ".netlify/functions-internal"
-  included_files = ["my_data.sqlite"]
+  # included_files = ["my_data.sqlite"]
+  included_files = ["dist/my_data.sqlite"]
 
 [build.environment]
   NETLIFY_USE_BUN = "true"

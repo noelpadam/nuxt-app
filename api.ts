@@ -21,6 +21,7 @@ const ESM_DIRNAME = path.dirname(__filename); // 👈 The new directory path
 const FILENAME = 'my_data.sqlite';
 // For testing purposes, hardcode the path where Netlify puts included files
 const DB_PATH = '/var/task/my_data.sqlite';
+//const DB_PATH = path.join(ESM_DIRNAME, FILENAME);
 
 
 // Function to get an open, promise-based database handle
@@ -83,7 +84,7 @@ export default () => new Elysia()
 async function debugAndOpenDB() {
     // 1. List files in the execution directory (should be /var/task/)
     try {
-        const files = fs.readdirSync(ESM_DIRNAME + '/var'); // Adjusted to parent directory for Netlify
+        const files = fs.readdirSync(ESM_DIRNAME); // Adjusted to parent directory for Netlify
         console.log("INFO: Files found in execution directory:", files);
         
         if (!files.includes(FILENAME)) {

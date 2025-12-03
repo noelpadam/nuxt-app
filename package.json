@@ -4,11 +4,13 @@
   "private": true,
   "packageManager": "bun@1.3.3",
   "scripts": {
+    "install": "bun install",
     "build": "bun --bun run nuxt build",
     "dev": "bun --bun run nuxt dev",
     "generate": "bun --bun run nuxt generate",
     "preview": "bun --bun run nuxt preview",
-    "postinstall": "bun --bun run nuxt prepare"
+    "postinstall": "bun --bun run nuxt prepare",
+    "cacheclear": "bun pm cache rm"
   },
   "dependencies": {
     "@elysiajs/cron": "^1.4.1",
@@ -24,7 +26,8 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/bun": "latest",
-    "nuxt-elysia": "^0.2.0"
+    "nuxt-elysia": "^0.2.0",
+    "sass": "^1.94.2"
   },
   "peerDependencies": {
     "typescript": "^5"
